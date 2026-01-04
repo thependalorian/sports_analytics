@@ -42,6 +42,9 @@ source activate_sva.sh
 ### 2. Setup Database
 
 ```bash
+# Ensure virtual environment is activated
+source sva/bin/activate
+
 python scripts/setup_database.py
 ```
 
@@ -54,6 +57,9 @@ This will:
 
 **Option A: FastAPI Server (Backend API)**
 ```bash
+# Ensure virtual environment is activated
+source sva/bin/activate
+
 ./scripts/start_api.sh
 # Or manually:
 uvicorn api.main:app --reload
@@ -61,6 +67,9 @@ uvicorn api.main:app --reload
 
 **Option B: Streamlit App (UI Dashboard)**
 ```bash
+# Ensure virtual environment is activated
+source sva/bin/activate
+
 ./scripts/start_streamlit.sh
 # Or manually:
 streamlit run streamlit_app.py
@@ -234,6 +243,9 @@ All TODOs have been implemented with **real functionality** (no mocks):
 ## 🧪 Testing
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
 # Run database setup
 python scripts/setup_database.py
 
@@ -325,6 +337,9 @@ git lfs install
 ### Database Connection Issues
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
 # Check LanceDB health
 python -c "from api.lib.lancedb_adapter import get_lancedb; print(get_lancedb().health_check())"
 
@@ -345,6 +360,9 @@ pip install -r requirements.txt
 ### Port Already in Use
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
 # Change port in start scripts or use:
 uvicorn api.main:app --port 8001
 streamlit run streamlit_app.py --server.port 8502
@@ -357,11 +375,12 @@ streamlit run streamlit_app.py --server.port 8502
 1. ✅ Database setup complete
 2. ✅ All TODOs implemented
 3. ✅ DuckDB + LanceDB integrated
-4. 🔄 **Run migrations:** `python scripts/setup_database.py`
-5. 🔄 **Start API:** `./scripts/start_api.sh`
-6. 🔄 **Start UI:** `./scripts/start_streamlit.sh`
-7. 🔄 **Add sample data** (optional)
-8. 🔄 **Configure environment variables**
+4. 🔄 **Activate environment:** `source sva/bin/activate`
+5. 🔄 **Run migrations:** `python scripts/setup_database.py`
+6. 🔄 **Start API:** `./scripts/start_api.sh`
+7. 🔄 **Start UI:** `./scripts/start_streamlit.sh`
+8. 🔄 **Add sample data** (optional)
+9. 🔄 **Configure environment variables**
 
 ---
 

@@ -195,19 +195,24 @@ python scripts/setup.py
 
 This will:
 1. ✅ Check Python version (3.8+ required)
-2. ✅ Create virtual environment
+2. ✅ Create virtual environment (`sva`)
 3. ✅ Install dependencies (~5-10 minutes)
 4. ✅ Download YOLO11x model (~110MB, 1-2 minutes on 4G)
 5. ✅ Create all directories
 6. ✅ Run tests
 7. ✅ Show next steps
 
+**After setup, activate the environment:**
+```bash
+source sva/bin/activate
+```
+
 ### Manual Installation
 
 ```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Create virtual environment (named 'sva')
+python -m venv sva
+source sva/bin/activate  # On Windows: sva\Scripts\activate
 
 # Install dependencies
 pip install --upgrade pip
@@ -252,6 +257,10 @@ See `models/README.md` for detailed comparison and optimization tips.
 Before analyzing a new video, calibrate the field coordinates:
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
+# Run calibration tool
 python tools/define_field_polygon.py input_videos/your_match.mp4
 ```
 
@@ -266,6 +275,9 @@ The configuration will be saved to `config/field_config.json`.
 ### Basic Usage (Command Line) - RECOMMENDED
 
 ```bash
+# Activate virtual environment first
+source sva/bin/activate
+
 # Analyze a match (automatic end-to-end processing)
 python analyze_match.py input_videos/match.mp4
 
@@ -723,6 +735,7 @@ field_pos = transformer.transform_point((500, 300))  # Returns [x_m, y_m]
 - Enable camera movement caching (stub files)
 
 **5. Import errors**
+- Activate virtual environment: `source sva/bin/activate`
 - Ensure all dependencies are installed: `pip install -r requirements.txt`
 - Check that you're in the correct directory
 - Verify Python version (3.8+)
@@ -747,6 +760,9 @@ field_pos = transformer.transform_point((500, 300))  # Returns [x_m, y_m]
 Run tests using pytest:
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
 # Install test dependencies
 pip install -r requirements-dev.txt
 
@@ -787,6 +803,10 @@ mypy analytics/ utils/
 Process multiple videos at once:
 
 ```bash
+# Activate virtual environment
+source sva/bin/activate
+
+# Run batch processing
 python scripts/batch_process.py --input-dir input_videos/ --pattern "*.mp4"
 ```
 
@@ -889,6 +909,8 @@ A comprehensive web dashboard is planned to provide an interactive interface for
 
 **Backend API:**
 ```bash
+cd sports_analytics
+source sva/bin/activate
 cd api
 uvicorn main:app --reload
 ```
