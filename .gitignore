@@ -23,6 +23,7 @@ wheels/
 # Virtual Environment
 env/
 venv/
+sva/
 ENV/
 env.bak/
 venv.bak/
@@ -43,12 +44,13 @@ venv.bak/
 logs/
 *.log
 
-# Model files (large)
-models/*.pt
-models/*.pth
+# Model files (large) - Note: .pth and .pt files are tracked by Git LFS
 models/*.onnx
 models/*.pb
+# Allow LFS-tracked files in easyocr directory
+!models/easyocr/*.pth
 !models/.gitkeep
+!models/README.md
 
 # Output files
 output_videos/
