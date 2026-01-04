@@ -1,0 +1,32 @@
+{
+  "default": {
+    "pixel_vertices": [
+      [100, 1000],
+      [250, 280],
+      [900, 275],
+      [1600, 920]
+    ],
+    "court_length_m": 105,
+    "court_width_m": 68
+  },
+  "unam_match_1": {
+    "pixel_vertices": [
+      [110, 1035],
+      [265, 275],
+      [910, 260],
+      [1640, 915]
+    ],
+    "court_length_m": 105,
+    "court_width_m": 68
+  },
+  "sample_video": {
+    "pixel_vertices": [
+      [120, 1050],
+      [270, 290],
+      [920, 285],
+      [1650, 930]
+    ],
+    "court_length_m": 105,
+    "court_width_m": 68
+  }
+}
