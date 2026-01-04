@@ -28,7 +28,24 @@
 
 ## 📥 **DOWNLOAD MODELS**
 
-### **Method 1: Automatic Download (Recommended)**
+### **Method 1: From Repository (Git LFS) - Recommended**
+
+If you cloned the repository, model files are already included via Git LFS:
+
+```bash
+# Ensure Git LFS is installed and initialized
+git lfs install
+
+# Pull LFS-tracked files (if not automatically downloaded)
+git lfs pull
+
+# Verify files are downloaded
+ls -lh models/*.pt models/easyocr/*.pth
+```
+
+**Note:** This repository uses Git LFS for large model files. The `yolo11x.pt` file and EasyOCR models are automatically tracked by LFS.
+
+### **Method 2: Automatic Download Script**
 
 ```bash
 # Run from project root
@@ -41,7 +58,7 @@ This script will:
 3. Place in `models/yolo11x.pt`
 4. Create backup of YOLOv8x (optional, for comparison)
 
-### **Method 2: Manual Download**
+### **Method 3: Manual Download**
 
 **YOLO11x (Recommended):**
 ```bash
@@ -58,7 +75,7 @@ cp ~/.ultralytics/weights/yolo11x.pt models/
 - **YOLO11x:** https://github.com/ultralytics/assets/releases/download/v8.1.0/yolo11x.pt
 - **YOLOv8x (legacy):** https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8x.pt
 
-### **Method 3: Custom Trained Model**
+### **Method 4: Custom Trained Model**
 
 For football-specific optimizations (Namibian conditions):
 
@@ -230,10 +247,17 @@ yolo benchmark model=models/yolo11x.pt device=cpu  # CPU
 
 ## 🆘 **TROUBLESHOOTING**
 
+**Git LFS files showing as pointers:**
+- Ensure Git LFS is installed: `git lfs version`
+- Initialize LFS: `git lfs install`
+- Pull LFS files: `git lfs pull`
+- Verify files: `git lfs ls-files` should show actual files, not pointers
+
 **Model won't download:**
 - Check internet connection (MTC 4G/5G required, 3G too slow)
 - Use VPN if GitHub blocked
 - Manual download from Ultralytics releases page
+- If using Git LFS, ensure LFS is properly configured
 
 **Out of memory:**
 - Use YOLO11m or YOLO11s (smaller models)

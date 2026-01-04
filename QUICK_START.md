@@ -1,11 +1,25 @@
 # 🚀 Quick Start Guide
 
 **Date:** 2026-01-04  
-**Status:** ✅ All systems ready
+**Status:** ✅ All systems ready  
+**Repository:** [https://github.com/thependalorian/sports_analytics](https://github.com/thependalorian/sports_analytics)
 
 ---
 
-## ⚡ 3-Step Setup
+## ⚡ Quick Setup
+
+### 0. Clone Repository (First Time)
+
+```bash
+git clone https://github.com/thependalorian/sports_analytics.git
+cd sports_analytics
+
+# Install Git LFS (required for model files)
+# macOS: brew install git-lfs
+# Linux: sudo apt install git-lfs
+git lfs install
+git lfs pull  # Download large model files
+```
 
 ### 1. Activate Environment
 ```bash
@@ -36,6 +50,7 @@ python scripts/setup_database.py
 
 ## ✅ What's Ready
 
+- ✅ Repository on GitHub with Git LFS for large files
 - ✅ Virtual environment (sva) created and activated
 - ✅ All dependencies installed
 - ✅ LanceDB + DuckDB integrated
@@ -43,6 +58,7 @@ python scripts/setup_database.py
 - ✅ Database migration scripts ready
 - ✅ FastAPI server ready
 - ✅ Streamlit dashboard ready
+- ✅ Model files tracked via Git LFS
 
 ---
 

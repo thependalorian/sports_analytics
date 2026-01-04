@@ -1,6 +1,8 @@
 # ⚽ Sports Analytics Pipeline
 
-A comprehensive, **modular** football video analysis system powered by YOLOv8, ByteTrack, and advanced computer vision techniques. Built with a clean, maintainable architecture for research and production use.
+A comprehensive, **modular** football video analysis system powered by YOLO11x, ByteTrack, and advanced computer vision techniques. Built with a clean, maintainable architecture for research and production use.
+
+**Repository:** [https://github.com/thependalorian/sports_analytics](https://github.com/thependalorian/sports_analytics)
 
 ## 🌟 Features
 
@@ -168,6 +170,22 @@ sports_analytics/
 
 ## 🚀 Quick Start
 
+### Clone Repository
+
+```bash
+# Clone the repository
+git clone https://github.com/thependalorian/sports_analytics.git
+cd sports_analytics
+
+# Install Git LFS (required for large model files)
+git lfs install
+
+# Pull large model files from LFS
+git lfs pull
+```
+
+**Note:** This repository uses Git LFS for large model files (`.pth` and `.pt`). Make sure Git LFS is installed before cloning. See [Git LFS Installation](#git-lfs-setup) below.
+
 ### One-Command Setup (Recommended)
 
 ```bash
@@ -207,6 +225,14 @@ pip install -r requirements-dev.txt
 **Automatic Download (Easy):**
 ```bash
 python scripts/download_models.py --download
+```
+
+**From Repository (Git LFS):**
+If you cloned the repository, the YOLO11x model is already included via Git LFS:
+```bash
+# Ensure Git LFS is installed and initialized
+git lfs install
+git lfs pull  # Downloads all LFS-tracked files
 ```
 
 **Manual Download:**
@@ -764,6 +790,54 @@ Process multiple videos at once:
 python scripts/batch_process.py --input-dir input_videos/ --pattern "*.mp4"
 ```
 
+## 📦 Git LFS Setup
+
+This repository uses **Git LFS (Large File Storage)** for model files to avoid GitHub's file size limitations.
+
+### Installing Git LFS
+
+**macOS:**
+```bash
+brew install git-lfs
+git lfs install
+```
+
+**Linux:**
+```bash
+# Ubuntu/Debian
+sudo apt install git-lfs
+git lfs install
+
+# Or download from: https://git-lfs.github.com/
+```
+
+**Windows:**
+```bash
+# Using Chocolatey
+choco install git-lfs
+git lfs install
+
+# Or download installer from: https://git-lfs.github.com/
+```
+
+### Cloning with LFS Files
+
+```bash
+# Clone repository
+git clone https://github.com/thependalorian/sports_analytics.git
+cd sports_analytics
+
+# Pull LFS files (if not automatically downloaded)
+git lfs pull
+```
+
+### Files Tracked by LFS
+
+- `models/**/*.pth` - EasyOCR model files (~79 MB)
+- `models/**/*.pt` - YOLO model files (e.g., `yolo11x.pt`)
+
+These files are automatically handled by Git LFS when you clone or pull from the repository.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Areas for improvement:
@@ -851,8 +925,9 @@ See [PRD_WEB_DASHBOARD.md](docs/PRD_WEB_DASHBOARD.md) for complete details.
 ## 📧 Support
 
 For questions, issues, or suggestions:
-- Open an issue on GitHub
-- Check existing documentation
+- **GitHub Issues:** [https://github.com/thependalorian/sports_analytics/issues](https://github.com/thependalorian/sports_analytics/issues)
+- **Repository:** [https://github.com/thependalorian/sports_analytics](https://github.com/thependalorian/sports_analytics)
+- Check existing documentation in `docs/` folder
 - Review module docstrings: `help(ModuleName)`
 
 ---

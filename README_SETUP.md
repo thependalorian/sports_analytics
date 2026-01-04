@@ -2,11 +2,33 @@
 
 **Date:** 2026-01-04  
 **Version:** 2.1.0  
-**Market:** 🇳🇦 Namibia
+**Market:** 🇳🇦 Namibia  
+**Repository:** [https://github.com/thependalorian/sports_analytics](https://github.com/thependalorian/sports_analytics)
 
 ---
 
 ## 🚀 Quick Start
+
+### 0. Clone Repository (First Time Setup)
+
+```bash
+# Clone the repository
+git clone https://github.com/thependalorian/sports_analytics.git
+cd sports_analytics
+
+# Install Git LFS (if not already installed)
+# macOS: brew install git-lfs
+# Linux: sudo apt install git-lfs
+# Windows: choco install git-lfs
+
+# Initialize Git LFS
+git lfs install
+
+# Pull large model files from LFS
+git lfs pull
+```
+
+**Note:** This repository uses Git LFS for large model files. See [Git LFS Setup](#git-lfs-setup) section below.
 
 ### 1. Activate Virtual Environment
 
@@ -236,7 +258,69 @@ python -c "from api.lib.lancedb_adapter import get_lancedb; l = get_lancedb(); l
 
 ---
 
+## 📦 Git LFS Setup
+
+This repository uses **Git LFS (Large File Storage)** for model files to efficiently handle large files (>50MB).
+
+### Installation
+
+**macOS:**
+```bash
+brew install git-lfs
+git lfs install
+```
+
+**Linux:**
+```bash
+sudo apt install git-lfs  # Ubuntu/Debian
+git lfs install
+```
+
+**Windows:**
+```bash
+choco install git-lfs  # Using Chocolatey
+git lfs install
+```
+
+### Files Tracked by LFS
+
+- `models/**/*.pth` - EasyOCR model files
+- `models/**/*.pt` - YOLO model files (e.g., `yolo11x.pt`)
+
+### Cloning with LFS
+
+```bash
+git clone https://github.com/thependalorian/sports_analytics.git
+cd sports_analytics
+git lfs pull  # Download LFS-tracked files
+```
+
+### Verifying LFS Files
+
+```bash
+# Check LFS status
+git lfs ls-files
+
+# Should show:
+# models/easyocr/craft_mlt_25k.pth
+# models/easyocr/english_g2.pth
+# models/yolo11x.pt
+```
+
 ## 🐛 Troubleshooting
+
+### Git LFS Issues
+
+```bash
+# If LFS files show as pointers instead of actual files:
+git lfs pull
+
+# Verify LFS is working:
+git lfs version
+
+# Re-initialize if needed:
+git lfs install
+```
 
 ### Database Connection Issues
 
